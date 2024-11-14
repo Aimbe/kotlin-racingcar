@@ -1,8 +1,8 @@
 package mission
 
-data class Expression(val numbers: List<Double>, val operators: List<String>) {
+import misson.Operator
 
-    private val VALID_OPERATORS = setOf("+", "-", "*", "/")
+data class Expression(val numbers: List<Double>, val operators: List<String>) {
 
     init {
         validate()
@@ -27,13 +27,9 @@ data class Expression(val numbers: List<Double>, val operators: List<String>) {
 
     private fun validateOperators() {
         operators.forEach { operator ->
-            if (!isValidOperator(operator)) {
-                throw IllegalArgumentException("지원하지 않는 연산자입니다: $operator")
-            }
+            Operator.from(operator)
         }
     }
-
-    private fun isValidOperator(operator: String) = operator in VALID_OPERATORS
 
     companion object {
         private const val EXPRESSION_SEPERATOR = " ";
