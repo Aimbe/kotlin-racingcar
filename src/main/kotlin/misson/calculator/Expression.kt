@@ -1,9 +1,6 @@
-package mission
-
-import misson.Operator
+package misson.calculator
 
 data class Expression(val numbers: List<Double>, val operators: List<String>) {
-
     init {
         validate()
     }
@@ -32,7 +29,7 @@ data class Expression(val numbers: List<Double>, val operators: List<String>) {
     }
 
     companion object {
-        private const val EXPRESSION_SEPERATOR = " ";
+        private const val EXPRESSION_SEPERATOR = " "
 
         fun from(input: String): Expression {
             val tokens = input.split(EXPRESSION_SEPERATOR)
