@@ -1,12 +1,12 @@
 package misson
 
-import mission.Expression
+import misson.calculator.Expression
+import misson.calculator.ExpressionCalculator
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
 class ExpressionCalculatorTest {
-
     @ParameterizedTest
     @CsvSource(
         "1 + 2, 3.0",
@@ -21,7 +21,10 @@ class ExpressionCalculatorTest {
         "10 - 2 * 3, 24.0",
         "10 - 2 * 3 * 5, 120.0",
     )
-    fun `입력값을 정상적으로 수행한다`(input: String, expected: Double) {
+    fun `입력값을 정상적으로 수행한다`(
+        input: String,
+        expected: Double,
+    ) {
         val expression = Expression.from(input)
         val calculator = ExpressionCalculator(expression)
         assertEquals(expected, calculator.calculate())

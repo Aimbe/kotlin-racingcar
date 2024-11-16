@@ -1,18 +1,17 @@
 package misson
 
-import mission.Expression
-import org.junit.jupiter.api.Assertions.*
+import misson.calculator.Expression
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class ExpressionTest{
-
+class ExpressionTest {
     @Test
     fun `정상적인 문자열로부터 Expression 객체를 정상적으로 생성한다`() {
         val expression = Expression.from("1 + 2 * 3")
 
-        assertEquals(listOf(1.0, 2.0, 3.0), expression.numbers)
-        assertEquals(listOf("+", "*"), expression.operators)
+        assertThat(listOf(1.0, 2.0, 3.0)).isEqualTo(expression.numbers)
+        assertThat(listOf("+", "*")).isEqualTo(expression.operators)
     }
 
     @Test
@@ -35,5 +34,4 @@ class ExpressionTest{
             Expression(listOf(1.0, 2.0), listOf("+", "*"))
         }
     }
-
 }
