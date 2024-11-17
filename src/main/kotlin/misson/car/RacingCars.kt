@@ -14,9 +14,9 @@ class RacingCars(private val cars: List<RacingCar>) {
     }
 
     // 우승자를 찾는 객체의 책임
-    fun findWinner(): Winner {
+    fun findWinners(): Winners {
         val maxPosition = cars.maxOf { it.position }
         val winners = cars.filter { it.position == maxPosition }
-        return Winner(winners)
+        return Winners(winners)
     }
 }

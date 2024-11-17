@@ -1,6 +1,6 @@
 package misson.car
 
-class Winner(private val winners: List<RacingCar>) {
+class Winners(private val winners: List<RacingCar>) {
     fun getNames(): List<String> {
         return winners.map { it.name }
     }

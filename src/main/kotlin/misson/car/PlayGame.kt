@@ -23,6 +23,6 @@ class PlayGame(private val racingCars: RacingCars, private val attempts: Int) {
             printRoundResult(racingCars.getPositionsWithName())
         }
 
-        printWinner(racingCars.findWinner().representWinners())
+        printWinner(racingCars.findWinners().representWinners())
     }
 }
