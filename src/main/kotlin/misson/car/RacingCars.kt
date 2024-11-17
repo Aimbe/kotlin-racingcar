@@ -8,4 +8,8 @@ class RacingCars(private val cars: List<RacingCar>) {
     fun getPositions(): List<String> {
         return cars.map { it.representPostition() }
     }
+
+    fun getPositionsWithName(): List<String> {
+        return cars.map { it.representPostitionWithName() }
+    }
 }

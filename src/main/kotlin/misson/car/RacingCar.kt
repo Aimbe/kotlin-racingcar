@@ -1,8 +1,19 @@
 package misson.car
 
-class RacingCar(private val name: String = "붕붕이", private var position: Int = 0) {
+// 코틀린 문법에서 position을 private으로 하지 않아도 내부적으로는 getter로 접근
+class RacingCar(private val name: String = "붕붕이", var position: Int = 0) {
     init {
-        require(name.length in 1..5) { "이름은 1자 이상 5자 이하여야 합니다." }
+        validateName(name)
+    }
+
+    private fun validateName(name: String) {
+        if (name.length > 5) {
+            throw IllegalArgumentException("이름은 5자 이하만 가능합니다.")
+        }
+
+        if (name.isBlank()) {
+            throw IllegalArgumentException("이름은 공백일 수 없습니다.")
+        }
     }
 
     fun move(randomNumberGenerator: () -> Int) {
@@ -13,5 +24,9 @@ class RacingCar(private val name: String = "붕붕이", private var position: In
 
     fun representPostition(): String {
         return "-".repeat(position)
+    }
+
+    fun representPostitionWithName(): String {
+        return "자동차 " + name + " : " + "-".repeat(position)
     }
 }
