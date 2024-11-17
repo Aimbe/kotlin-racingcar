@@ -3,8 +3,23 @@ package misson
 import misson.car.RacingCar
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class RacingCarTest {
+    @Test
+    fun `이름이 5자를 초과하면 예외가 발생한다`() {
+        assertThrows<IllegalArgumentException> {
+            RacingCar("1234567")
+        }
+    }
+
+    @Test
+    fun `이름이 빈 문자열이면 예외가 발생한다`() {
+        assertThrows<IllegalArgumentException> {
+            RacingCar("")
+        }
+    }
+
     @Test
     fun `랜덤 값이 4이상일때 전진한다`() {
         RacingCar().apply {
