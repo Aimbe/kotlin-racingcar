@@ -1,7 +1,7 @@
 package misson.car
 
 // 코틀린 문법에서 position을 private으로 하지 않아도 내부적으로는 getter로 접근
-class RacingCar(private val name: String = "붕붕이", var position: Int = 0) {
+class RacingCar(val name: String = "붕붕이", var position: Int = 0) {
     init {
         validateName(name)
     }

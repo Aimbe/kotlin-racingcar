@@ -2,6 +2,7 @@ package misson.car
 
 import view.InputView
 import view.ResultView.printRoundResult
+import view.ResultView.printWinner
 
 fun main() {
     val carName = InputView.readCarName()
@@ -21,5 +22,7 @@ class PlayGame(private val racingCars: RacingCars, private val attempts: Int) {
             racingCars.moveAll { (0..9).random() }
             printRoundResult(racingCars.getPositionsWithName())
         }
+
+        printWinner(racingCars.findWinner().representWinners())
     }
 }
