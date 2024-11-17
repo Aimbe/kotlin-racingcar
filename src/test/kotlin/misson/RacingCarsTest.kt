@@ -23,4 +23,34 @@ class RacingCarsTest {
         val positions = racingCars.getPositions()
         assertThat(positions).containsExactly("", "", "")
     }
+
+    @Test
+    fun `가장 멀리간 자동차가 우승한다`() {
+        val racingCars =
+            RacingCars(
+                listOf(
+                    RacingCar("car1", 3),
+                    RacingCar("car2", 2),
+                    RacingCar("car3", 1),
+                ),
+            )
+
+        val winners = racingCars.findWinners()
+        assertThat(winners.representWinners()).isEqualTo("car1")
+    }
+
+    @Test
+    fun `postion이 여러차가 동일 할 시에 공동 우승한다`() {
+        val racingCars =
+            RacingCars(
+                listOf(
+                    RacingCar("car1", 3),
+                    RacingCar("car2", 3),
+                    RacingCar("car3", 2),
+                ),
+            )
+
+        val winners = racingCars.findWinners()
+        assertThat(winners.representWinners()).isEqualTo("car1, car2")
+    }
 }
