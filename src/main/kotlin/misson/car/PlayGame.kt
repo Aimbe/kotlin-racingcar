@@ -7,15 +7,19 @@ fun main() {
     val carCount = InputView.readCarCount()
     val attempts = InputView.readAttempts()
 
-    val carList = List(carCount) { RacingCar() }
-    val playGame = PlayGame(RacingCars(carList), attempts)
+    val playGame = PlayGame(carCount, attempts)
 
     playGame.play()
 }
 
-class PlayGame(private val racingCars: RacingCars, private val attemtps: Int) {
+class PlayGame(private val racingCars: RacingCars, private val attempts: Int) {
+    constructor(carCount: Int, attemtps: Int) : this(
+        racingCars = RacingCars(List(carCount) { RacingCar() }),
+        attempts = attemtps,
+    )
+
     fun play() {
-        repeat(attemtps) {
+        repeat(attempts) {
             racingCars.moveAll { (0..9).random() }
             printRoundResult(racingCars.getPositions())
         }
