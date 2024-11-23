@@ -1,8 +1,8 @@
 package view
 
-import misson.car.CarPositionFormatter
-import misson.car.RacingCars
-import misson.car.Winners
+import misson.car.domain.CarPositionFormatter
+import misson.car.domain.RacingCars
+import misson.car.domain.Winners
 
 object ResultView {
     fun printRoundResult(racingCars: RacingCars) {

@@ -1,4 +1,4 @@
-package misson.car
+package misson.car.domain
 
 class RacingCars(val cars: List<RacingCar>) {
     fun moveAll(randomNumberGenerator: () -> Int) {

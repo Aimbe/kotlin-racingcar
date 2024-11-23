@@ -1,4 +1,4 @@
-package misson.car
+package misson.car.domain
 
 // 코틀린 문법에서 position을 private으로 하지 않아도 내부적으로는 getter로 접근
 class RacingCar(val name: String = "붕붕이", var position: Int = 0) {

@@ -1,4 +1,4 @@
-package misson.car
+package misson.car.domain
 
 @JvmInline
 value class Winners(private val winners: List<RacingCar>) {

@@ -1,4 +1,4 @@
-package misson.car
+package misson.car.domain
 
 class CarPositionFormatter {
     companion object {

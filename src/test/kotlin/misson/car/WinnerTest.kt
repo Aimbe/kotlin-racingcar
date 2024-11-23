@@ -1,5 +1,7 @@
 package misson.car
 
+import misson.car.domain.RacingCar
+import misson.car.domain.Winners
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

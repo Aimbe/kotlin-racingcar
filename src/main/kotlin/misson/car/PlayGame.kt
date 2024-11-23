@@ -1,5 +1,7 @@
 package misson.car
 
+import misson.car.domain.RacingCar
+import misson.car.domain.RacingCars
 import view.InputView
 import view.ResultView.printRoundResult
 import view.ResultView.printWinner
