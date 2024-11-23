@@ -14,6 +14,6 @@ class WinnerTest {
                 ),
             )
 
-        assertThat(winners.representWinners()).isEqualTo("car1, car2")
+        assertThat(winners.getNames()).containsExactly("car1", "car2")
     }
 }
