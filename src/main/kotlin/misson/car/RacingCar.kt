@@ -7,13 +7,8 @@ class RacingCar(val name: String = "붕붕이", var position: Int = 0) {
     }
 
     private fun validateName(name: String) {
-        if (name.length > 5) {
-            throw IllegalArgumentException("이름은 5자 이하만 가능합니다.")
-        }
-
-        if (name.isBlank()) {
-            throw IllegalArgumentException("이름은 공백일 수 없습니다.")
-        }
+        require(name.length <= 5) { "이름은 5자 이하만 가능합니다." }
+        require(name.isNotBlank()) { "이름은 공백일 수 없습니다." }
     }
 
     fun move(randomNumberGenerator: () -> Int) {
