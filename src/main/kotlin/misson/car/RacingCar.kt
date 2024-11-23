@@ -16,12 +16,4 @@ class RacingCar(val name: String = "붕붕이", var position: Int = 0) {
             position++
         }
     }
-
-    fun representPostition(): String {
-        return "-".repeat(position)
-    }
-
-    fun representPostitionWithName(): String {
-        return "자동차 " + name + " : " + "-".repeat(position)
-    }
 }

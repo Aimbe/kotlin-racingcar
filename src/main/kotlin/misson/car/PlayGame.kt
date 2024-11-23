@@ -20,7 +20,7 @@ class PlayGame(private val racingCars: RacingCars, private val attempts: Int) {
     fun play() {
         repeat(attempts) {
             racingCars.moveAll { (0..9).random() }
-            printRoundResult(racingCars.getPositionsWithName())
+            printRoundResult(racingCars)
         }
 
         printWinner(racingCars.findWinners().representWinners())

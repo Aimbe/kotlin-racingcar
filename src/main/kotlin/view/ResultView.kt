@@ -1,8 +1,13 @@
 package view
 
+import misson.car.CarPositionFormatter
+import misson.car.RacingCars
+
 object ResultView {
-    fun printRoundResult(positions: List<String>) {
-        positions.forEach { println(it) }
+    fun printRoundResult(racingCars: RacingCars) {
+        racingCars.cars
+            .map { CarPositionFormatter.formatCarPosition(it) }
+            .forEach { println(it) }
         println()
     }
 
