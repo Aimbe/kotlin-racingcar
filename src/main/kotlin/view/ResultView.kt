@@ -2,6 +2,7 @@ package view
 
 import misson.car.CarPositionFormatter
 import misson.car.RacingCars
+import misson.car.Winners
 
 object ResultView {
     fun printRoundResult(racingCars: RacingCars) {
@@ -11,7 +12,8 @@ object ResultView {
         println()
     }
 
-    fun printWinner(winners: String) {
-        println("최종 우승자는 $winners 입니다.")
+    fun printWinner(winners: Winners) {
+        val winnerNames = winners.getNames().joinToString(", ")
+        println("최종 우승자는 $winnerNames 입니다.")
     }
 }
